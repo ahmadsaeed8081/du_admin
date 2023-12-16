@@ -1,0 +1,79 @@
+.Reward-page {
+  padding: 40px 0;
+  width: 100%;
+  height: 100%;
+  min-height: 730px;
+  background-color: #1c0057;
+  .wrap {
+    .Reward-box {
+      min-height: 730px;
+      width: 100%;
+      border-radius: 18px;
+      background-color: #fff;
+      @include media("<=tablet") {
+        padding: 20px 30px;
+        min-width: 0;
+      }
+      .Reward-header {
+        padding: 30px 60px;
+        display: flex;
+        @include media("<=tablet") {
+          padding: 10px 2px;
+        }
+
+        .heading {
+          color: #1c0057;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 800;
+          @include media("<=tablet") {
+            font-size: 20px;
+          }
+        }
+      }
+      .wrap-block {
+        max-width: 1000px;
+        .re-box {
+          min-height: 140px;
+          padding: 30px;
+          border-radius: 12px;
+          background: #fff;
+          border: 2.723px solid #1c0057;
+          @include anim;
+          @include media("<=tablet") {
+            border-radius: 4px;
+            padding: 16px 14px;
+          }
+
+          .title {
+            color: #1c0057;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 35px;
+            @include media("<=tablet") {
+              font-size: 18px;
+            }
+          }
+          .numb {
+            color: #1c0057;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 35px;
+            @include media("<=tablet") {
+              font-size: 16px;
+            }
+          }
+          // &:hover {
+          //   background: #1c0057;
+          //   .title,
+          //   .numb {
+          //     color: #fff;
+          //   }
+          // }
+        }
+      }
+    }
+  }
+}
