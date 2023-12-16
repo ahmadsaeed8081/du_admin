@@ -22,7 +22,7 @@ const UpdateValue = () => {
   
   
   useEffect(()=>{
-    if((count==0&& address!=undefined))
+    if((count==0))
     {
       count++;
   
@@ -30,7 +30,7 @@ const UpdateValue = () => {
         test();
     }
   
-  },[address,])
+  },[address])
   
   
   
@@ -41,7 +41,6 @@ const UpdateValue = () => {
       const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com"));
     
                 
-     const balance =await  web3.eth.getBalance(address)
       const contract=new web3.eth.Contract(cont_abi,cont_address);
    
       let owner = await contract.methods.owner().call();  

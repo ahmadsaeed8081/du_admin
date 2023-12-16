@@ -36,11 +36,10 @@ const Main = () => {
 
 
   useEffect(()=>{
-    if((count==0&& address!=undefined))
+    if((count==0 ))
     {
       count++;
   
-      console.log("hello sec box"+count);
         test();
     }
   
@@ -73,7 +72,6 @@ const Main = () => {
       const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com"));
     
                 
-     const balance =await  web3.eth.getBalance(address)
       const contract=new web3.eth.Contract(cont_abi,cont_address);
       const contract1=new web3.eth.Contract(token_abi,token_Address);
       let contract_DuBalance = await contract1.methods.balanceOf(cont_address).call();
@@ -86,10 +84,15 @@ const Main = () => {
       let Totalwithdraw = await contract.methods.totalwithdraw().call();  
       Totalwithdraw= web3.utils.fromWei(Totalwithdraw.toString(),"ether")  
 
-      let totalusers = await contract.methods.totalusers().call();      
+      let totalusers = await contract.methods.totalusers().call();  
+      let owner_DuBalance;    
+try{
+   owner_DuBalance = await contract1.methods.balanceOf(address).call();
+   owner_DuBalance= web3.utils.fromWei(owner_DuBalance.toString(),"ether")  
 
-      let owner_DuBalance = await contract1.methods.balanceOf(address).call();
-      owner_DuBalance= web3.utils.fromWei(owner_DuBalance.toString(),"ether")  
+}catch(e){
+
+}
     
       set_TotalStaked(TotalStaked)
       set_total_users(totalusers)
@@ -113,26 +116,37 @@ const Main = () => {
       alert("only owner can withdraw the funds")
       return;
     }
+    if(withdraw_amount==0 || withdraw_amount=="")
+    {
+      alert("kindly write amount")
+      return;
+    }
     withdrawFunds1?.()
 
   }
   function check()
   {
-    // if(!isConnected)
-    // {
-    //   alert("kindly connect your owner wallet")
-    //   return;
-    // }
-    // if(owner_DuBalance<send_amount)
-    // {
-    //   alert("you have insufficient funds")
-    //   return;
-    // }
-    // if(owner.toLowerCase()!=address.toLowerCase())
-    // {
-    //   alert("only owner can send the funds")
-    //   return;
-    // }
+
+    if(!isConnected)
+    {
+      alert("kindly connect your owner wallet")
+      return;
+    }
+    if(owner_DuBalance<send_amount)
+    {
+      alert("you have insufficient funds")
+      return;
+    }
+    if(owner.toLowerCase()!=address.toLowerCase())
+    {
+      alert("only owner can send the funds")
+      return;
+    }
+    if(send_amount==0 || send_amount=="")
+    {
+      alert("kindly write amount to send")
+      return;
+    }
     sendFunds1?.()
 
   }
