@@ -166,9 +166,31 @@ const UpdateValue = () => {
     })
       const { data:Result_update_minimum_investment, isLoading2_update_minimum_investment1, isSuccess2_update_minimum_investment1, write:update_minimum_investment1 } = useContractWrite(update_minimum_investment)
       const { data:Result_update_minimum_withdraw_reward_limit, isLoading2_update_minimum_withdraw_reward_limit, isSuccess2_update_minimum_withdraw_reward_limit, write:update_minimum_withdraw_reward_limit1 } = useContractWrite(update_minimum_withdraw_reward_limit)
-      const { data:Result_update_maximum_withdraw_reward_limit, isLoading2_update_maximum_withdraw_reward_limit, isSuccess2_update_maximum_withdraw_reward_limit, write:update_maximum_withdraw_reward_limit1 } = useContractWrite(update_maximum_withdraw_reward_limit)
-      const { data:Result_update_Unstake_penaltybefore30days, isLoading2_update_Unstake_penaltybefore30days, isSuccess2_update_Unstake_penaltybefore30days, write:update_Unstake_penaltybefore30days1 } = useContractWrite(update_Unstake_penaltybefore30days)
-      const { data:Result_update_withdrawfee, isLoading2_update_withdrawfee, isSuccess2_update_withdrawfee, write:update_withdrawfee1 } = useContractWrite(update_withdrawfee)
+      const { data:Result_update_maximum_withdraw_reward_limit, isLoading2_update_maximum_withdraw_reward_limit, isSuccess2_update_maximum_withdraw_reward_limit, write:update_maximum_withdraw_reward_limit1 } = useContractWrite({
+        address: cont_address,
+        abi: cont_abi,
+        functionName: 'update_maximum_withdraw_reward_limit',
+        args: [Number(numb)*10**18],
+      
+      
+      })
+      const { data:Result_update_Unstake_penaltybefore30days, isLoading2_update_Unstake_penaltybefore30days, isSuccess2_update_Unstake_penaltybefore30days, write:update_Unstake_penaltybefore30days1 } = useContractWrite({
+        address: cont_address,
+        abi: cont_abi,
+        functionName: 'update_Unstake_penaltybefore30days',
+        args: [Number(numb)*10**18],
+      
+      
+      })
+
+      const { data:Result_update_withdrawfee, isLoading2_update_withdrawfee, isSuccess2_update_withdrawfee, write:update_withdrawfee1 } = useContractWrite({
+        address: cont_address,
+        abi: cont_abi,
+        functionName: 'update_withdrawfee',
+        args: [Number(numb)*10**18],
+      
+      
+      })
     
 
 
