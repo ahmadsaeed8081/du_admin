@@ -81,12 +81,12 @@ const UpdateValue = () => {
       functionName: "0.00",
     },
     {
-      Title: "Min Withdraw",
+      Title: "Max Withdraw",
       value: maximum_withdraw_reward_limit,
       functionName: "0.00",
     },
     {
-      Title: "Max Withdraw",
+      Title: "Min Withdraw",
       value: minimum_withdraw_reward_limit,
       functionName: "0.00",
     },
@@ -166,14 +166,14 @@ const UpdateValue = () => {
     })
       const { data:Result_update_minimum_investment, isLoading2_update_minimum_investment1, isSuccess2_update_minimum_investment1, write:update_minimum_investment1 } = useContractWrite(update_minimum_investment)
       const { data:Result_update_minimum_withdraw_reward_limit, isLoading2_update_minimum_withdraw_reward_limit, isSuccess2_update_minimum_withdraw_reward_limit, write:update_minimum_withdraw_reward_limit1 } = useContractWrite(update_minimum_withdraw_reward_limit)
-      const { data:Result_update_maximum_withdraw_reward_limit, isLoading2_update_maximum_withdraw_reward_limit, isSuccess2_update_maximum_withdraw_reward_limit, write:update_maximum_withdraw_reward_limit1 } = useContractWrite({
-        address: cont_address,
-        abi: cont_abi,
-        functionName: 'update_maximum_withdraw_reward_limit',
-        args: [Number(numb)*10**18],
+      // const { data:Result_update_maximum_withdraw_reward_limit, isLoading2_update_maximum_withdraw_reward_limit, isSuccess2_update_maximum_withdraw_reward_limit, write:update_maximum_withdraw_reward_limit1 } = useContractWrite({
+      //   address: cont_address,
+      //   abi: cont_abi,
+      //   functionName: 'update_maximum_withdraw_reward_limit',
+      //   args: [Number(numb)*10**18],
       
       
-      })
+      // })
       const { data:Result_update_Unstake_penaltybefore30days, isLoading2_update_Unstake_penaltybefore30days, isSuccess2_update_Unstake_penaltybefore30days, write:update_Unstake_penaltybefore30days1 } = useContractWrite({
         address: cont_address,
         abi: cont_abi,
@@ -241,10 +241,10 @@ const UpdateValue = () => {
         {
           update_minimum_withdraw_reward_limit1?.()
         }
-        else if(index==2)
-        {
-          update_maximum_withdraw_reward_limit1?.()
-        }
+        // else if(index==2)
+        // {
+        //   update_maximum_withdraw_reward_limit1?.()
+        // }
         else if(index==3)
         {
           update_Unstake_penaltybefore30days1?.()
