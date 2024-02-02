@@ -226,18 +226,18 @@ const UpdateValue = () => {
           return;
         }
         
-        if(owner.toLowerCase()!=address.toLowerCase())
-        {
-          alert("only owner can update these values")
-          return;
-        }
+        // if(owner.toLowerCase()!=address.toLowerCase())
+        // {
+        //   alert("only owner can update these values")
+        //   return;
+        // }
 
         if(index==0)
         {
           update_minimum_investment1?.()
 
         }
-        else if(index==1)
+        else if(index==2)
         {
           update_minimum_withdraw_reward_limit1?.()
         }
