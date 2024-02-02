@@ -226,11 +226,11 @@ const UpdateValue = () => {
           return;
         }
         
-        // if(owner.toLowerCase()!=address.toLowerCase())
-        // {
-        //   alert("only owner can update these values")
-        //   return;
-        // }
+        if(owner.toLowerCase()!=address.toLowerCase())
+        {
+          alert("only owner can update these values")
+          return;
+        }
 
         if(index==0)
         {
